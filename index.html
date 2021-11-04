@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a5a172da96.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Two player dice game</title>
+</head>
+<body>
+
+<section class="main">
+<button style="cursor:pointer" id="showRules">SHOW RULES</button>
+
+<div id="rules">
+        <p>How to play:
+            <ul>
+                <li>Player 1 rolls first, and can roll as many times as they want.</li>
+                <li>A player can hold at any point to save their score, but they can't roll again after doing so.</li>
+                <li>If a player rolls the number 1, their score will reset, and the next player rolls.</li>
+                <li>The first player to score 20 or higher wins.</li>
+            </ul>
+        </p>
+</div>
+</section>
+        
+    <section class="layout"> 
+
+    <section class="p1">
+    <h1 id="heading">Player 1</h1>
+    <h1 id="winner">Winner!</h1>
+    <h1 id="loser">Game over!</h1>
+    </section>
+
+    <section class="dice">
+        <i id="one" class="fas fa-dice-one"></i>
+        <i id="two" class="fas fa-dice-two"></i>
+        <i id="three" class="fas fa-dice-three"></i>
+        <i id="four" class="fas fa-dice-four"></i>
+        <i id="five" class="fas fa-dice-five"></i>
+        <i id="six" class="fas fa-dice-six"></i>
+    </section>
+
+    <section class="p2">
+        <h1 id="heading">Player 2</h1>
+        <h1 id="winner">Winner!</h1>
+        <h1 id="loser">Game over!</h1>
+    </section>
+    
+    <p id=result></p>
+        
+    </section>
+
+    <button style="cursor:pointer" id="rollBtn" type="button">ROLL</button>   
+    <button style="cursor:pointer" id="playAgainBtn" type="button">PLAY AGAIN</button>   
+
+
+<script src="app.js"></script>     
+</body>
+</html>
