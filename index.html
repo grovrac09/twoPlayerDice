@@ -18,20 +18,25 @@
         <p>How to play:
             <ul>
                 <li>Player 1 rolls first, and can roll as many times as they want.</li>
-                <li>A player can hold at any point to save their score, but they can't roll again after doing so.</li>
+                <li>A player can hold at any point to save their score, but they can't roll again unless the next player holds.</li>
                 <li>If a player rolls the number 1, their score will reset, and the next player rolls.</li>
                 <li>The first player to score 20 or higher wins.</li>
             </ul>
         </p>
 </div>
 </section>
-        
-    <section class="layout"> 
+
+<button style="cursor:pointer" id="gameBtn" type="button">NEW GAME</button>   
+
+<h1 id="oneStart">Player 1's turn</h1>
+<h1 id="twoStart">Player 2's turn</h1>
+      
+<section id="layout"> 
 
     <section class="p1">
-    <h1 id="heading">Player 1</h1>
-    <h1 id="winner">Winner!</h1>
-    <h1 id="loser">Game over!</h1>
+        <h1 id="heading">Player 1</h1>
+        <h1 id="winner"></h1>
+        <p id="result1"></p>       
     </section>
 
     <section class="dice">
@@ -46,16 +51,16 @@
     <section class="p2">
         <h1 id="heading">Player 2</h1>
         <h1 id="winner">Winner!</h1>
-        <h1 id="loser">Game over!</h1>
+        <p id="result2"></p>       
     </section>
-    
-    <p id=result></p>
-        
-    </section>
+</section>
 
-    <button style="cursor:pointer" id="rollBtn" type="button">ROLL</button>   
-    <button style="cursor:pointer" id="playAgainBtn" type="button">PLAY AGAIN</button>   
-
+<div id="bottomBtn">
+<button style="cursor:pointer" id="oneRollBtn" type="button">ROLL</button>   
+<button style="cursor:pointer" id="twoRollBtn" type="button">ROLL</button>   
+<button style="cursor:pointer" id="oneHoldBtn" type="button">HOLD</button>   
+<button style="cursor:pointer" id="twoHoldBtn" type="button">HOLD</button>   
+</div>
 
 <script src="app.js"></script>     
 </body>
