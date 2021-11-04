@@ -1,3 +1,7 @@
+html {
+    overflow-x: hidden;
+}
+    
 body {
     background-color: black;
     color: white;
@@ -9,7 +13,7 @@ body {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 24px;
 }
 
 button {
@@ -31,7 +35,6 @@ button:hover {
   }
 
 .main {
-    margin: 10px;
     width: 450px;
     height: 200px;
     display: flex;
@@ -56,7 +59,7 @@ button:hover {
 }
 
 .p1 {
-    max-height: 50vh;
+    min-height: 50vh;
     width: 15vw;
     padding: 15px;
     border-style: solid;
@@ -69,7 +72,7 @@ button:hover {
 
 
 .p2 {
-    max-height: 50vh;
+    min-height: 50vh;
     width: 15vw;
     padding: 15px;
     text-align: center;
@@ -91,4 +94,3 @@ i {
     font-size: 150px;
     color: white;
 }
-

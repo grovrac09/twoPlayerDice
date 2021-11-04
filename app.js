@@ -35,7 +35,7 @@ let twoStart = document.getElementById("twoStart");
 // START GAME
 newGame.addEventListener("click", () => {
     total = 0;
-    bottomBtn.style.display = "block";
+    bottomBtn.style.display = "flex";
     newGame.style.display = "none";
     oneStart.style.display = "block";
     twoStart.style.display = "none";
