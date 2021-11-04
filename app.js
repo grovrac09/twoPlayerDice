@@ -61,6 +61,8 @@ oneRollBtn.addEventListener("click", () => {
         diceFive.style.display = "none";
         diceSix.style.display = "none";
         result1.textContent = "Points reset! Player 2's turn."
+        twoStart.style.display = "block";
+        oneStart.style.display = "none";
         twoRollBtn.style.display = "block";
         oneRollBtn.style.display = "none";
     } else if (num == 2) {
@@ -113,6 +115,7 @@ oneRollBtn.addEventListener("click", () => {
         bottomBtn.style.display = "none";
         newGame.style.display = "block";
         oneStart.style.display = "none";
+        twoStart.style.display = "none";
       }
 })
 
@@ -127,6 +130,8 @@ twoRollBtn.addEventListener("click", () => {
         diceFive.style.display = "none";
         diceSix.style.display = "none";
         result2.textContent = "Points reset! Player 1's turn."
+        twoStart.style.display = "none";
+        oneStart.style.display = "block";
         twoRollBtn.style.display = "none";
         oneRollBtn.style.display = "block";
     } else if (num == 2) {
@@ -179,6 +184,7 @@ twoRollBtn.addEventListener("click", () => {
         bottomBtn.style.display = "none";
         newGame.style.display = "block";
         oneStart.style.display = "none";
+        twoStart.style.display = "none";
       }
 })
 
