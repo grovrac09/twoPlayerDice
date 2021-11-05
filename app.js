@@ -13,12 +13,8 @@ showBtn.addEventListener("click", () => {
 });
 
 // DICE SIDES
-let diceOne = document.getElementById("one");
-let diceTwo = document.getElementById("two");
-let diceThree = document.getElementById("three");
-let diceFour = document.getElementById("four");
-let diceFive = document.getElementById("five");
-let diceSix = document.getElementById("six");
+let dice = document.getElementById("dice");
+let mainDice = document.getElementById("startDice");
 
 // GAME BUTTONS
 let newGame = document.getElementById("gameBtn");
@@ -29,16 +25,17 @@ let oneHoldBtn = document.getElementById("oneHoldBtn");
 let twoHoldBtn = document.getElementById("twoHoldBtn");
 
 // OTHER
-let oneStart = document.getElementById("oneStart");
-let twoStart = document.getElementById("twoStart");
+let turnMsg = document.getElementById("turnMsg");
 
 // START GAME
 newGame.addEventListener("click", () => {
-    total = 0;
+    total1 = 0;
+    total2 = 0;
     bottomBtn.style.display = "flex";
     newGame.style.display = "none";
-    oneStart.style.display = "block";
-    twoStart.style.display = "none";
+    turnMsg.innerHTML = "Player 1's turn";
+    result1.textContent = ""
+    result2.textContent = ""
     oneRollBtn.style.display = "block";
     oneHoldBtn.style.display = "block";
     twoRollBtn.style.display = "none";
@@ -46,152 +43,90 @@ newGame.addEventListener("click", () => {
 });
 
 // ROLL
-let total = 0;
+let total1 = 0;
+let total2 = 0;
 let result1 = document.getElementById("result1");
 let result2 = document.getElementById("result2");
 
 oneRollBtn.addEventListener("click", () => {
+    mainDice.style.display = "none";
     let num = Math.floor(Math.random()*6);
     if (num == 1) {
-        total = 0;
-        diceOne.style.display = "block";
-        diceTwo.style.display = "none";
-        diceThree.style.display = "none";
-        diceFour.style.display = "none";
-        diceFive.style.display = "none";
-        diceSix.style.display = "none";
-        result1.textContent = "Points reset! Player 2's turn."
-        twoStart.style.display = "block";
-        oneStart.style.display = "none";
+        total1 = 0;
+        dice.innerHTML = '<i id="one" class="fas fa-dice-one"></i>';
+        result1.textContent = "Points reset!"
+        turnMsg.innerHTML = "Player 2's turn";
         twoRollBtn.style.display = "block";
         oneRollBtn.style.display = "none";
     } else if (num == 2) {
-        total +=2;
-        diceTwo.style.display = "block";
-        result1.textContent = `${total}`;
-        diceOne.style.display = "none";
-        diceThree.style.display = "none";
-        diceFour.style.display = "none";
-        diceFive.style.display = "none";
-        diceSix.style.display = "none";
+        total1 +=2;
+        result1.textContent = `${total1}`;
+        dice.innerHTML = `<i id="two" class="fas fa-dice-two"></i>`;
     } else if (num == 3) {
-        total +=3; 
-        diceThree.style.display = "block";
-        result1.textContent = `${total}`;
-        diceOne.style.display = "none";
-        diceTwo.style.display = "none";
-        diceFour.style.display = "none";
-        diceFive.style.display = "none";
-        diceSix.style.display = "none"; 
+        total1 +=3; 
+        result1.textContent = `${total1}`;
+        dice.innerHTML = `<i id="three" class="fas fa-dice-three"></i>`;
     } else if (num == 4) {
-        total +=4;
-        diceFour.style.display = "block";
-        result1.textContent = `${total}`;
-        diceOne.style.display = "none";
-        diceTwo.style.display = "none";
-        diceThree.style.display = "none";
-        diceFive.style.display = "none";
-        diceSix.style.display = "none";
+        total1 +=4;
+        result1.textContent = `${total1}`;
+        dice.innerHTML = `<i id="four" class="fas fa-dice-four"></i>`;
     } else if (num == 5) {
-        total += 5;
-        diceFive.style.display = "block";
-        result1.textContent = `${total}`;
-        diceOne.style.display = "none";
-        diceTwo.style.display = "none";
-        diceThree.style.display = "none";
-        diceFour.style.display = "none";
-        diceSix.style.display = "none";
+        total1 += 5;
+        result1.textContent = `${total1}`;
+        dice.innerHTML = `<i id="five" class="fas fa-dice-five"></i>`;
     } else if (num == 6) {
-        total += 6;
-        diceSix.style.display = "block";
-        result1.textContent = `${total}`;
-        diceOne.style.display = "none";
-        diceTwo.style.display = "none";
-        diceThree.style.display = "none";
-        diceFour.style.display = "none";
-        diceFive.style.display = "none";
-    } if (total >= 20) {
-        result1.textContent = `${total} - You win!`;
+        total1 += 6;
+        result1.textContent = `${total1}`;
+        dice.innerHTML = `<i id="six" class="fas fa-dice-six"></i>`;
+    } if (total1 >= 20) {
+        result1.textContent = `${total1} - You win!`;
         bottomBtn.style.display = "none";
         newGame.style.display = "block";
-        oneStart.style.display = "none";
-        twoStart.style.display = "none";
+        turnMsg.innerHTML = "";
       }
 })
+
+
 
 twoRollBtn.addEventListener("click", () => {
     let num = Math.floor(Math.random()*6);
     if (num == 1) {
-        total = 0;
-        diceOne.style.display = "block";
-        diceTwo.style.display = "none";
-        diceThree.style.display = "none";
-        diceFour.style.display = "none";
-        diceFive.style.display = "none";
-        diceSix.style.display = "none";
-        result2.textContent = "Points reset! Player 1's turn."
-        twoStart.style.display = "none";
-        oneStart.style.display = "block";
+        total2 = 0;
+        dice.innerHTML = '<i id="one" class="fas fa-dice-one"></i>';
+        result2.textContent = "Points reset!"
+        turnMsg.innerHTML = "Player 1's turn";
         twoRollBtn.style.display = "none";
         oneRollBtn.style.display = "block";
     } else if (num == 2) {
-        total +=2;
-        diceTwo.style.display = "block";
-        result2.textContent = `${total}`;
-        diceOne.style.display = "none";
-        diceThree.style.display = "none";
-        diceFour.style.display = "none";
-        diceFive.style.display = "none";
-        diceSix.style.display = "none";
+        total2 +=2;
+        result2.textContent = `${total2}`;
+        dice.innerHTML = `<i id="two" class="fas fa-dice-two"></i>`;
     } else if (num == 3) {
-        total +=3; 
-        diceThree.style.display = "block";
-        result2.textContent = `${total}`;
-        diceOne.style.display = "none";
-        diceTwo.style.display = "none";
-        diceFour.style.display = "none";
-        diceFive.style.display = "none";
-        diceSix.style.display = "none"; 
+        total2 +=3; 
+        result2.textContent = `${total2}`;
+        dice.innerHTML = `<i id="three" class="fas fa-dice-three"></i>`;
     } else if (num == 4) {
-        total +=4;
-        diceFour.style.display = "block";
-        result2.textContent = `${total}`;
-        diceOne.style.display = "none";
-        diceTwo.style.display = "none";
-        diceThree.style.display = "none";
-        diceFive.style.display = "none";
-        diceSix.style.display = "none";
+        total2 +=4;
+        result2.textContent = `${total2}`;
+        dice.innerHTML = `<i id="four" class="fas fa-dice-four"></i>`;
     } else if (num == 5) {
-        total += 5;
-        diceFive.style.display = "block";
-        result2.textContent = `${total}`;
-        diceOne.style.display = "none";
-        diceTwo.style.display = "none";
-        diceThree.style.display = "none";
-        diceFour.style.display = "none";
-        diceSix.style.display = "none";
+        total2 += 5;
+        result2.textContent = `${total2}`;
+        dice.innerHTML = `<i id="five" class="fas fa-dice-five"></i>`;
     } else if (num == 6) {
-        total += 6;
-        diceSix.style.display = "block";
-        result2.textContent = `${total}`;
-        diceOne.style.display = "none";
-        diceTwo.style.display = "none";
-        diceThree.style.display = "none";
-        diceFour.style.display = "none";
-        diceFive.style.display = "none";
-    } if (total >= 20) {
-        result2.textContent = `${total} - You win!`;
+        total2 += 6;
+        result2.textContent = `${total2}`;
+        dice.innerHTML = `<i id="six" class="fas fa-dice-six"></i>`;
+    } if (total2 >= 20) {
+        result2.textContent = `${total2} - You win!`;
         bottomBtn.style.display = "none";
         newGame.style.display = "block";
-        oneStart.style.display = "none";
-        twoStart.style.display = "none";
+        turnMsg.innerHTML = "";
       }
 })
 
 oneHoldBtn.addEventListener("click", () => {
-    total = 0;
-    twoStart.style.display = "block";
-    oneStart.style.display = "none";
+    turnMsg.innerHTML = "Player 2's turn";
     oneRollBtn.style.display = "none";
     oneHoldBtn.style.display = "none";
     twoRollBtn.style.display = "block";
@@ -199,9 +134,7 @@ oneHoldBtn.addEventListener("click", () => {
 })
 
 twoHoldBtn.addEventListener("click", () => {
-    total = 0;
-    oneStart.style.display = "block";
-    twoStart.style.display = "none";
+    turnMsg.innerHTML = "Player 1's turn";
     oneRollBtn.style.display = "block";
     oneHoldBtn.style.display = "block";
     twoRollBtn.style.display = "none";

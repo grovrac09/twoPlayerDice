@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<section class="main">
+<section class="ruleStyle">
 <button style="cursor:pointer" id="showRules">SHOW RULES</button>
 
 <div id="rules">
@@ -26,41 +26,39 @@
 </div>
 </section>
 
-<button style="cursor:pointer" id="gameBtn" type="button">NEW GAME</button>   
-
-<h1 id="oneStart">Player 1's turn</h1>
-<h1 id="twoStart">Player 2's turn</h1>
-      
 <section id="layout"> 
 
-    <section class="p1">
-        <h1 id="heading">Player 1</h1>
-        <h1 id="winner"></h1>
-        <p id="result1"></p>       
+    <h1 id="turnMsg"></h1>
+    <button style="cursor:pointer" id="gameBtn" type="button">NEW GAME</button>  
+
+    <section id="players">
+        <section class="p1">
+            <h1 id="heading">Player 1</h1>
+            <h1 id="winner"></h1>
+            <p id="result1"></p>       
+        </section>
+
+        <section id="dice"></section>
+        <i id="startDice" class="fas fa-dice"></i>
+
+        <section class="p2">
+            <h1 id="heading">Player 2</h1>
+            <h1 id="winner"></h1>
+            <p id="result2"></p>       
+        </section>
+
     </section>
 
-    <section class="dice">
-        <i id="one" class="fas fa-dice-one"></i>
-        <i id="two" class="fas fa-dice-two"></i>
-        <i id="three" class="fas fa-dice-three"></i>
-        <i id="four" class="fas fa-dice-four"></i>
-        <i id="five" class="fas fa-dice-five"></i>
-        <i id="six" class="fas fa-dice-six"></i>
-    </section>
+    <div id="bottomBtn">
+        <button style="cursor:pointer" id="oneRollBtn" type="button">ROLL</button>   
+        <button style="cursor:pointer" id="twoRollBtn" type="button">ROLL</button>   
+        <button style="cursor:pointer" id="oneHoldBtn" type="button">HOLD</button>   
+        <button style="cursor:pointer" id="twoHoldBtn" type="button">HOLD</button>   
+    </div>
 
-    <section class="p2">
-        <h1 id="heading">Player 2</h1>
-        <h1 id="winner">Winner!</h1>
-        <p id="result2"></p>       
-    </section>
 </section>
 
-<div id="bottomBtn">
-<button style="cursor:pointer" id="oneRollBtn" type="button">ROLL</button>   
-<button style="cursor:pointer" id="twoRollBtn" type="button">ROLL</button>   
-<button style="cursor:pointer" id="oneHoldBtn" type="button">HOLD</button>   
-<button style="cursor:pointer" id="twoHoldBtn" type="button">HOLD</button>   
-</div>
+
 
 <script src="app.js"></script>     
 </body>
