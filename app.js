@@ -49,6 +49,7 @@ let result1 = document.getElementById("result1");
 let result2 = document.getElementById("result2");
 
 oneRollBtn.addEventListener("click", () => {
+    document.getElementById("dice").play();
     mainDice.style.display = "none";
     let num = Math.floor(Math.random()*6);
     if (num == 1) {
@@ -89,6 +90,7 @@ oneRollBtn.addEventListener("click", () => {
 
 
 twoRollBtn.addEventListener("click", () => {
+    document.getElementById("dice").play();
     let num = Math.floor(Math.random()*6);
     if (num == 1) {
         total2 = 0;
